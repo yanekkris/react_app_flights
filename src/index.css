@@ -39,6 +39,8 @@ body {
 
 .title{
   color: rgb(40, 40, 87);
+  display: block;
+  padding: 4rem;
 
 }
 
@@ -67,4 +69,11 @@ button {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+select {
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px;
+  color: rgb(80, 80, 80);
 }
