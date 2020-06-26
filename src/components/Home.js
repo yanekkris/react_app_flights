@@ -45,14 +45,7 @@ function Home () {
             setFlights(data.data);
         } else {
             return null;
-<<<<<<< HEAD
-        }
-
-        // console.log(data.data[0].cityFrom, data.data[0].cityTo, data.data[0].price, data.data[0].dTime, data.data[0].fly_duration)
-        // return data
-=======
           }
->>>>>>> e79b30d0537e679d3468008685b3313a1fb33eb9
     }
 
 
