@@ -1,39 +1,59 @@
 import React, { useState, useEffect } from 'react';
 import Flight from './Flight';
 import { DateTime } from 'luxon';
+import SearchBar from "./SearchBar";
 
-const url = 'https://api.skypicker.com/flights?fly_from=CZ&fly_to=VLC&date_from=08/08/2020&date_to=08/09/2020&partner=picky&limit=5'
+const url = 'https://api.skypicker.com/flights'
 
 function Home () {
-    const [searchValue, setSearchValue] = useState([]);
+    const [searchValue, setSearchValue] = useState("PRG");
 
     const [flights, setFlights] = useState([]);
-    
 
+
+    const handleSearchClick = (e) => {
+        console.log()
+    }
+    
+    const handleChangeFrom = (e) => {
+        const changeFrom = e.target.value
+        console.log(typeof changeFrom);
+    }
+
+    const handleChangeTo = (e) => {
+        const changeTo = e.target.value
+    }
+    
     async function fetchData (url) {
-        const response = await fetch(url)
+        const response = await fetch(url + '?fly_from=' + changeFrom + '&fly_to=' + changeTo + '&date_from=27/06/2020&date_to=30/06/2020&partner=picky&limit=5')
         const data = await response.json()
-        console.log(data)
         if (data) {
             setFlights(data.data);
           } else {
             return null;
           }
-
-        // console.log(data.data[0].cityFrom, data.data[0].cityTo, data.data[0].price, data.data[0].dTime, data.data[0].fly_duration)
-        // return data
     }
+
+
 
     useEffect(() => {
         fetchData(url);
 
     }, [])
 
+
+
     return (
         <div>
             <h1>Welcome</h1>
-            <button>Button!</button>
 
+
+            <SearchBar
+            searchValue={searchValue}
+            handleSearchClick={handleSearchClick}
+            handleChangeFrom={handleChangeFrom}
+            handleChangeTo={handleChangeTo}
+            />
 
 
 
@@ -50,7 +70,6 @@ function Home () {
           <h1> Add search results here.</h1>
         )}
 
-        {loading ? <LoadingSpinner /> : <ResultsTable results={data} />}
             
         </div>
     )
