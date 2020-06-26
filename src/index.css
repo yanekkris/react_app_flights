@@ -17,3 +17,54 @@ body {
   background-repeat: no-repeat;
   background-size: cover; 
 }
+
+.container{
+  width: 90%;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem auto;
+
+}
+
+.container__item{
+  background-color: rgba(255, 255, 255, 0.705);
+  border-radius: 15px;
+  padding: 1.5rem;
+  width: 40%;
+  margin: 1rem 0;
+  /* box-shadow: rgba(236, 236, 218, 0.527) 0px 10px 15px; */
+
+}
+
+.title{
+  color: rgb(40, 40, 87);
+
+}
+
+img{
+  width:35px;
+  height: 35px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 8px 14px;
+  border: none;
+  background-color: white;
+  border-radius: 15px;
+  color: rgb(80, 80, 80);
+}
+
+.info{
+  display: flex;
+  justify-content: center;
+}
+
+.flight_time{
+  padding: 0px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
